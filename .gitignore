@@ -1,0 +1,5 @@
+node_modules/*
+.sass-cache/*
+sass/style2.scss
+css/style2.css
+index-ready.html

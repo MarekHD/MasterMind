@@ -1,0 +1,213 @@
+/* MAIN STYLE *//* MAIN STYLE *//* MAIN STYLE *//* MAIN STYLE *//* MAIN STYLE *//* MAIN STYLE */
+.container {
+    width: 100%;
+    height: 720px;
+    margin: 0 auto;
+    max-width: 680px;
+    border: 3px solid red;
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+}
+.title {
+    width: 100%;
+    height: 70px;
+    margin: 0 auto;
+    max-width: 680px;
+    border: 2px solid blue;
+}
+.hidden {
+    visibility: hidden;
+}
+h1 {
+    font-size: 40px;
+    text-align: center;
+}
+h2 {
+    font-size: 15px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.board {
+    width: 100%;
+    margin: 0 auto;
+    max-width: 680px;
+    border: 3px solid green;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+/* GAME STYLE *//* GAME STYLE *//* GAME STYLE *//* GAME STYLE *//* GAME STYLE */
+.game {
+    width: 70%;
+    margin: 0 auto;
+    border: 1px solid orange;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+.game-trials {
+    width: 100%;
+    height: 20px;
+    margin: 0 auto;
+    border: 2px solid #00FF22;
+
+}
+/* ROW ROW ROW ROW ROW ROW ROW ROW ROW ROW ROW ROW  */
+.row {
+    width: 100%;
+    height: 50px;
+    margin: 0 auto;
+    border: 2px solid #343B29;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    
+}
+.row .key-wraper {
+    width: 80%;
+    height: 50px;
+    background-color: beige;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    padding: 0px 15px;
+}
+.peg {
+    width: 13%;
+    height: 80%;
+    border-radius: 50%;
+    background-color: #F4F7FB;
+    align-self: center;
+}
+.row .answer-wraper {
+    width: 20%;
+    height: 50px;
+    background-color: blue;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.dot {
+    width:14%;
+    height: 25%;
+    border-radius:50%;
+    background-color: white;
+    align-self: center;
+    margin: 0px 10px;
+}
+.row .check{
+    width: 20%;
+    height: 50px;
+    background-color: tomato;
+    /* flex-grow: 1; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.check .button {
+    width: 50%;
+    height: 80%;
+}
+/* ROW ROW ROW ROW ROW ROW ROW ROW ROW ROW ROW ROW  */
+/* HISTORY HISTORY HISTORY HISTORY HISTORY HISTORY HISTORY HISTORY HISTORY  */
+.history {
+    width: 100%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column-reverse;
+    border: 3px solid brown;
+
+}
+.history .row {
+    width: 100%;
+    height: 40px;
+    margin: 0 auto;
+    border: 1px solid #343B29;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.history .row .key-wraper {
+    width: 80%;
+    height: 40px;
+    background-color: beige;
+    border: 1px solid white;
+    
+}
+.history .row .answer-wraper {
+    width: 20%;
+    height: 40px;
+    background-color: blue;
+    border: 1px solid white;
+}
+/* HISTORY HISTORY HISTORY HISTORY HISTORY HISTORY HISTORY HISTORY HISTORY  */
+
+
+/* SIDE STYLE *//* SIDE STYLE *//* SIDE STYLE *//* SIDE STYLE */
+.side {
+    width: 30%;
+    margin: 0 auto;
+    border: 1px solid violet;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+.colors {
+    width: 100%;
+    flex-grow: 1;
+    border: 1px solid palevioletred;
+    display: flex;
+    flex-direction: column;
+}
+.color-title {
+    width: 100%;
+    height: 25px;
+    margin: 0 auto;
+    border: 2px solid blue;
+}
+.color-selection-wraper {
+    display: flex;
+    justify-content: space-between;
+    /* align-content: space-between; */
+    flex-wrap: wrap;
+    flex-grow: 1;
+    padding: 0px 20px;    
+
+}
+.selected {
+    width: 41px;
+    height: 41px;
+    border-radius: 50%;
+    align-self: center;
+}
+#color0 {
+    background-color: #519D9E;
+}
+#color1 {
+    background-color: #ef6a32;
+}
+#color2 {
+    background-color: #710162;
+}
+#color3 {
+    background-color: #ed0345;
+}
+#color4 {
+    background-color: #fbbf45;
+}
+#color5 {
+    background-color: #0868ac;
+}
+#color99 {
+    background-color: white;
+}
+.rules {
+    width: 100%;
+    flex-grow: 1;
+    border: 1px solid orange;
+}
