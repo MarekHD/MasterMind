@@ -29,17 +29,18 @@ class Board extends React.Component {
         })
     }
     check = (data)=>{
-        console.log("game",data)
+        console.log("Odpalam metode check",data)
         this.setState({
             filledRow : data,
             trials : this.state.trials + 1,
             shouldRenderHistory: true,
         }) 
     }
+    //Sprawdzam dzialanie componentDidUpdate
     componentDidUpdate(){
         console.log("Component Did update w componencie board",this.state.filledRow)
     }
-
+    //Nad resetem trzeba jeszcze poprawcować
     resetRow = () => {
         console.log("reset")
         this.setState({
@@ -49,8 +50,8 @@ class Board extends React.Component {
             filledRow : [],
         })
     }
-    componentDidMount(){
-        //Losowanie klucza code
+    componentDidMount(){//Losowanie klucza code
+        
         let code = [];
         for (var i = 0; i < 4; i++) {
             let index = Math.floor(Math.random()*6);

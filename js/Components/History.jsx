@@ -2,15 +2,13 @@ import React from 'react';
 import {RowHistory} from './RowHistory.jsx';
 
 
-
 class History extends React.Component {
     constructor(props){
         super(props);
         this.state={
             trials : this.props.trials,
             historyList : []
-        }
-       
+       }       
     }
     componentWillReceiveProps(nextProps) {
         console.log("componentWillReceiveProps")
@@ -23,18 +21,17 @@ class History extends React.Component {
             })
         }
     }
-    
     render() {
         let historyRows;
         if(this.props.shouldRenderHistory === true){
 
             historyRows = this.state.historyList.map( (elem, i) => {
-                return  <div key={i}> dodal sie rzad </div>
-                // <RowHistory
-                //      key={i}
-                //     filledRow={this.props.filledRow} 
-                //     code={this.props.code} 
-                //     trials={this.props.trials}/>
+                return <RowHistory
+                        key={i}
+                        filledRow={this.props.filledRow} 
+                        code={this.props.code} 
+                        trials={this.props.trials}
+                        />
             })
         } else {
              historyRows

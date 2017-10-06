@@ -10,16 +10,6 @@ class KeyWraper extends React.Component {
         }
     }
 
-    componentDidUpdate(){
-        let filled = []
-        if (this.state.pegListColor.indexOf("color99")=== -1){
-            
-            console.log('wypelnione')
-            filled = this.state.pegListColor
-
-        }
-        // console.log('Update',filled)
-    }
     componentWillReceiveProps(nextProps) {
         let number = nextProps.number;
         if(number != null ){
