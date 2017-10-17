@@ -5,8 +5,7 @@ class KeyWraper extends React.Component {
         super(props);
         this.state={
             pegListColor: ["color99", "color99","color99","color99"],
-            anwserTab: {},
-            btnDis: true
+            
         }
     }
 
@@ -19,15 +18,15 @@ class KeyWraper extends React.Component {
                 pegListColor :arrColor
             })
         }
-        
+        console.log("TAKtak wyglada pegListColor",this.state.pegListColor)
     }
     sendPegs = (event) => {
-        console.log('start sendPegs DATA',this.state.pegListColor)
-        this.props.check(this.state.pegListColor)
+        console.log('start sendPegs DATA',this.state.pegListColor);
+        this.props.check(this.state.pegListColor);
         this.setState({
             pegListColor: ["color99", "color99","color99","color99"]
         })
-        console.log("zmiany w check tak wyglada pegListColor",this.pegListColor)
+        console.log('co sie tu dzieje',this.state.pegListColor)
         
     }
     render() { 
