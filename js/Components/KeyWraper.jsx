@@ -22,9 +22,13 @@ class KeyWraper extends React.Component {
         
     }
     sendPegs = (event) => {
-        if(this.state.pegListColor.indexOf("color99")=== -1) {
+        console.log('start sendPegs DATA',this.state.pegListColor)
         this.props.check(this.state.pegListColor)
-        }
+        this.setState({
+            pegListColor: ["color99", "color99","color99","color99"]
+        })
+        console.log("zmiany w check tak wyglada pegListColor",this.pegListColor)
+        
     }
     render() { 
         const pegs = [0,1,2,3];
@@ -37,7 +41,9 @@ class KeyWraper extends React.Component {
                             className="peg" 
                             id={this.state.pegListColor[i]}>
                         </div>
+                        
             })
+            console.log("hej",this.state.pegListColor)
 
         let disabled=true;
         if (this.state.pegListColor.indexOf("color99")=== -1){disabled = false;}

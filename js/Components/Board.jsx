@@ -15,8 +15,9 @@ class Board extends React.Component {
             trials : 0,
             shouldRenderHistory: false
         }
-        this.mainColor = "";
+        this.mainColor = "color99";
         this.number = null;
+        console.log('nic nie robie...')
     }
     takeClick = (event) => {
         this.mainColor = event.target.id;
