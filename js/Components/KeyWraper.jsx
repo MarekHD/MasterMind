@@ -18,15 +18,15 @@ class KeyWraper extends React.Component {
                 pegListColor :arrColor
             })
         }
-        console.log("TAKtak wyglada pegListColor",this.state.pegListColor)
+        console.log("W tym consol.log nie odswieza mi sie moj pegListColor",this.state.pegListColor)
     }
     sendPegs = (event) => {
-        console.log('start sendPegs DATA',this.state.pegListColor);
+        console.log('start sendPegs DATA');
         this.props.check(this.state.pegListColor);
         this.setState({
             pegListColor: ["color99", "color99","color99","color99"]
         })
-        console.log('co sie tu dzieje',this.state.pegListColor)
+        console.log('tu nie dziala setState dla pegListColor',this.state.pegListColor)
         
     }
     render() { 
@@ -42,7 +42,7 @@ class KeyWraper extends React.Component {
                         </div>
                         
             })
-            console.log("hej",this.state.pegListColor)
+            console.log("Jaki jest pegListColor przed renderem",this.state.pegListColor)
 
         let disabled=true;
         if (this.state.pegListColor.indexOf("color99")=== -1){disabled = false;}
