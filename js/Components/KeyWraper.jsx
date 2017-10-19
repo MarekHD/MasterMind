@@ -4,7 +4,7 @@ class KeyWraper extends React.Component {
     constructor(props){
         super(props);
         this.state={
-            pegListColor: ["color99", "color99","color99","color99"],
+            wraperColor: ["color99", "color99","color99","color99"],
             
         }
     }
@@ -12,19 +12,27 @@ class KeyWraper extends React.Component {
     componentWillReceiveProps(nextProps) {
         let number = nextProps.number;
         if(number != null ){
-            let arrColor = this.state.pegListColor.slice();
+            let arrColor = this.state.wraperColor.slice();
             arrColor[number] = nextProps.mainColor
             this.setState({
-                pegListColor :arrColor
+                wraperColor :arrColor
             })
         }  
     }
+    //sendPegs uruchamia funkcje check
     sendPegs = (event) => {
-        console.log('start sendPegs DATA');
-        this.props.check(this.state.pegListColor);
+        this.props.check(this.state.wraperColor);
+        //nie dziala mi setState
+        this.setState({
+            wraperColor: ["color99", "color99","color99","color99"]
+        })
         
     }
+    componentDidMount(){
+        console.log('ZMIANA',this.state.wraperColor)    
+    }
     render() { 
+        
         const pegs = [0,1,2,3];
         let pegList = [];
             pegList = pegs.map((elem, i)=>{
@@ -33,7 +41,7 @@ class KeyWraper extends React.Component {
                             data-id={i}  
                             key={i} 
                             className="peg" 
-                            id={this.state.pegListColor[i]}>
+                            id={this.state.wraperColor[i]}>
                         </div>
                         
             })
@@ -44,7 +52,7 @@ class KeyWraper extends React.Component {
         if (disabled == false){
             disabled = true
         } else
-        if (this.state.pegListColor.indexOf("color99")=== -1){console.log('zmiana dla dostepny przycisk'); disabled = false;}
+        if (this.state.wraperColor.indexOf("color99")=== -1){console.log('zmiana dla dostepny przycisk'); disabled = false;}
         //endregion
         return  <div className="row">
                     <div className="key-wraper">
