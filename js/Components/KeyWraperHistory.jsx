@@ -5,19 +5,20 @@ class KeyWraperHistory extends React.Component {
     constructor(props){
         super(props);
         this.state={
-            pegListColor: ["color99", "color99","color99","color99"],
+            // pegListColor: ["color99", "color99","color99","color99"],
         }
     }
     
 
     render() {
             let tab = [];
+           
         //Sprawdzam czy rzad juz zostal zmieniony czy jest to nowa odpowiedz
-        if (this.state.pegListColor.indexOf("color99") == 0){
+        if (this.props.pegListColor.indexOf("color99") == 0){
             let commingTable = this.props.filledRow;
-            tab = this.state.pegListColor;
+            // tab = this.state.pegListColor;
             if (commingTable){ tab = commingTable }  
-        } else { tab = this.state.pegListColor }
+        } else { tab = this.props.pegListColor }
 
 
 

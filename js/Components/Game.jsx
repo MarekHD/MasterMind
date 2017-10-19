@@ -18,7 +18,9 @@ class Game extends React.Component {
                         reset={this.props.reset}
                         shouldRenderHistory={this.props.shouldRenderHistory}
                         code={this.props.code} 
-                        trials={this.props.trials}/>
+                        trials={this.props.trials}
+                        pegListColor={this.props.pegListColor}
+                        />
                 </div>
     }
 }

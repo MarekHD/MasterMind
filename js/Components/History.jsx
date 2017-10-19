@@ -20,16 +20,22 @@ class History extends React.Component {
                 historyList: tempHistoryList
             })
         }
+        console.log("componentWillReceiveProps",)
+    }
+    componentDidUpdate() {
+        console.log("Sprawdzam dzialanie componentDidUpdate w History", this.props.filledRow);
     }
     render() {
         let historyRows;
+        
         if(this.props.shouldRenderHistory === true){
 
             historyRows = this.state.historyList.map( (elem, i) => {
                 return <RowHistory
                         key={i}
                         filledRow={this.props.filledRow} 
-                        code={this.props.code} 
+                        code={this.props.code}
+                        pegListColor={this.props.pegListColor}
                         trials={this.props.trials}
                         />
             })

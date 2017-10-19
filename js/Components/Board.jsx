@@ -13,11 +13,13 @@ class Board extends React.Component {
             number : null,
             filledRow : [],
             trials : 0,
-            shouldRenderHistory: false
+            shouldRenderHistory: false,
+            pegListColor: ["color99", "color99","color99","color99"],
+            btnDisable : true
         }
+        //Ustawienia poczatkowe
         this.mainColor = "color99";
         this.number = null;
-        console.log('nic nie robie...')
     }
     takeClick = (event) => {
         this.mainColor = event.target.id;
@@ -27,31 +29,34 @@ class Board extends React.Component {
         this.setState({
             mainColor: this.mainColor,
             number: this.number,
+
         })
     }
     check = (data)=>{
+
         console.log("Odpalam metode check",data)
         this.setState({
             filledRow : data,
             trials : this.state.trials + 1,
             shouldRenderHistory: true,
+            btnDisable: false
         }) 
     }
+
     //Sprawdzam dzialanie componentDidUpdate
     componentDidUpdate(){
-        console.log("Component Did update w componencie board",this.state.filledRow)
+        console.log("Sprawdzam dzialanie componentDidUpdate",this.state.filledRow)
     }
     //Nad resetem trzeba jeszcze poprawcować
     resetRow = () => {
         console.log("reset")
         this.setState({
             shouldRenderHistory: false,
-            mainColor : 'color99',
-            number : null,
             filledRow : [],
+            pegListColor: ["color99", "color99","color99","color99"],
         })
     }
-    componentDidMount(){//Losowanie klucza code
+    componentDidMount(){//region Losowanie klucza code
         
         let code = [];
         for (var i = 0; i < 4; i++) {
@@ -59,9 +64,10 @@ class Board extends React.Component {
             code.push(this.state.colors[index]);
         }
         this.setState({code})
-        //
+        //endregion
     }
     render() {
+        console.log(this.state.filledRow, 'filledRow sprawdzam')
         return  <div className="board">
                     <Game 
                         number={this.state.number} 
@@ -71,7 +77,9 @@ class Board extends React.Component {
                         code={this.state.code}
                         trials={this.state.trials}
                         shouldRenderHistory={this.state.shouldRenderHistory}
-                        filledRow={this.state.filledRow}/>
+                        filledRow={this.state.filledRow}
+                        pegListColor={this.state.pegListColor}
+                        btnDisable={this.state.btnDisable}/>
                     <Side {...this.state} takeClick={this.takeClick} resetRow={this.resetRow}/>
                 </div>
     }

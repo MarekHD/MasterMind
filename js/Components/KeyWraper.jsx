@@ -17,16 +17,11 @@ class KeyWraper extends React.Component {
             this.setState({
                 pegListColor :arrColor
             })
-        }
-        console.log("W tym consol.log nie odswieza mi sie moj pegListColor",this.state.pegListColor)
+        }  
     }
     sendPegs = (event) => {
         console.log('start sendPegs DATA');
         this.props.check(this.state.pegListColor);
-        this.setState({
-            pegListColor: ["color99", "color99","color99","color99"]
-        })
-        console.log('tu nie dziala setState dla pegListColor',this.state.pegListColor)
         
     }
     render() { 
@@ -42,11 +37,15 @@ class KeyWraper extends React.Component {
                         </div>
                         
             })
-            console.log("Jaki jest pegListColor przed renderem",this.state.pegListColor)
-
-        let disabled=true;
-        if (this.state.pegListColor.indexOf("color99")=== -1){disabled = false;}
-
+            
+        //region Blokowanie przycisku CHECK!    
+        let disabled = this.props.btnDisable;
+        console.log(disabled)
+        if (disabled == false){
+            disabled = true
+        } else
+        if (this.state.pegListColor.indexOf("color99")=== -1){console.log('zmiana dla dostepny przycisk'); disabled = false;}
+        //endregion
         return  <div className="row">
                     <div className="key-wraper">
                         {pegList}
