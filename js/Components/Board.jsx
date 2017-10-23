@@ -40,10 +40,14 @@ class Board extends React.Component {
             filledRow : data,
             trials : this.state.trials + 1,
             shouldRenderHistory: true,
-            // btnDisable: false
         }) 
     }
-
+    resetShouldRender =()=>{
+        console.log("Odpalam metode resetRenderRRR")
+        this.setState({
+            shouldRenderHistory: false,
+        })
+    }
     //Sprawdzam dzialanie componentDidUpdate
     componentDidUpdate(){
         console.log("Sprawdzam dzialanie componentDidUpdate",this.state.filledRow)
@@ -71,6 +75,7 @@ class Board extends React.Component {
         console.log(this.state.filledRow, 'filledRow sprawdzam')
         return  <div className="board">
                     <Game 
+                        resetShouldRender={this.resetShouldRender}
                         number={this.state.number} 
                         mainColor={this.state.mainColor} 
                         giveClick={this.giveClick}

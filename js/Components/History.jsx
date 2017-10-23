@@ -12,24 +12,24 @@ class History extends React.Component {
     }
     componentWillReceiveProps(nextProps) {
         console.log("componentWillReceiveProps")
-        if(nextProps.filledRow.length == 4 ) {
+        if(nextProps.shouldRenderHistory === true ) {
             let colorsArr = nextProps.filledRow;
             let tempHistoryList = this.state.historyList.slice();
             tempHistoryList.push(colorsArr)
             this.setState({
                 historyList: tempHistoryList
             })
+            this.props.resetShouldRender();
         }
         console.log("componentWillReceiveProps",)
+        
     }
     componentDidUpdate() {
         console.log("Sprawdzam dzialanie componentDidUpdate w History", this.props.filledRow);
     }
     render() {
         let historyRows;
-        
-        if(this.props.shouldRenderHistory === true){
-
+        console.log('JAKI SHOULD REN',this.props.shouldRenderHistory)
             historyRows = this.state.historyList.map( (elem, i) => {
                 return <RowHistory
                         key={i}
@@ -39,9 +39,6 @@ class History extends React.Component {
                         trials={this.props.trials}
                         />
             })
-        } else {
-             historyRows
-        }
         return  <div className="history">
                     {historyRows}
                 </div>

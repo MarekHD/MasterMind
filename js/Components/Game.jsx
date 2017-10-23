@@ -20,6 +20,7 @@ class Game extends React.Component {
                         code={this.props.code} 
                         trials={this.props.trials}
                         pegListColor={this.props.pegListColor}
+                        resetShouldRender={this.props.resetShouldRender}
                         />
                 </div>
     }
