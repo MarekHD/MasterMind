@@ -15,7 +15,6 @@ class KeyWraper extends React.Component {
         if(number != null ){
             let arrColor = this.state.wraperColor.slice();
             arrColor[number] = nextProps.mainColor
-            //tu daj jakis warunek zeby zresetowal po checku wraper
             this.setState({
                 wraperColor :arrColor
             })
@@ -27,19 +26,9 @@ class KeyWraper extends React.Component {
     }
     //sendPegs uruchamia funkcje check
     sendPegs = (event) => {
-        this.props.check(this.state.wraperColor);
-        //nie dziala mi setState
-    
-        
+        this.props.check(this.state.wraperColor);        
     }
-    componentWillMount(){
-        ////
-            }
-        
     
-    componentDidMount(){
-        ///// 
-    }
     render() { 
         
         const pegs = [0,1,2,3];
@@ -57,7 +46,10 @@ class KeyWraper extends React.Component {
             
         //region Blokowanie przycisku CHECK!    
         let disabled = this.props.btnDisable;
+        console.log(this.state.wraperColor)
         console.log(disabled)
+
+        
         if (disabled == false){
             disabled = true
         } else

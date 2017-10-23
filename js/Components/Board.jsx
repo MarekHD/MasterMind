@@ -40,7 +40,7 @@ class Board extends React.Component {
             filledRow : data,
             trials : this.state.trials + 1,
             shouldRenderHistory: true,
-            btnDisable: false
+            // btnDisable: false
         }) 
     }
 
