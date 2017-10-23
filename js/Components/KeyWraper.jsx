@@ -10,26 +10,35 @@ class KeyWraper extends React.Component {
     }
 
     componentWillReceiveProps(nextProps) {
+        console.log('Nowa zmiana')
         let number = nextProps.number;
         if(number != null ){
             let arrColor = this.state.wraperColor.slice();
             arrColor[number] = nextProps.mainColor
+            //tu daj jakis warunek zeby zresetowal po checku wraper
             this.setState({
                 wraperColor :arrColor
             })
-        }  
+        } else {
+            this.setState({
+                wraperColor :["color99", "color99","color99","color99"]
+            })
+        }
     }
     //sendPegs uruchamia funkcje check
     sendPegs = (event) => {
         this.props.check(this.state.wraperColor);
         //nie dziala mi setState
-        this.setState({
-            wraperColor: ["color99", "color99","color99","color99"]
-        })
+    
         
     }
+    componentWillMount(){
+        ////
+            }
+        
+    
     componentDidMount(){
-        console.log('ZMIANA',this.state.wraperColor)    
+        ///// 
     }
     render() { 
         
@@ -52,7 +61,11 @@ class KeyWraper extends React.Component {
         if (disabled == false){
             disabled = true
         } else
-        if (this.state.wraperColor.indexOf("color99")=== -1){console.log('zmiana dla dostepny przycisk'); disabled = false;}
+        if (this.state.wraperColor.indexOf("color99")=== -1){
+            console.log('zmiana dla dostepny przycisk');
+             disabled = false;
+             
+            }
         //endregion
         return  <div className="row">
                     <div className="key-wraper">

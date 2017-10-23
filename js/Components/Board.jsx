@@ -36,6 +36,7 @@ class Board extends React.Component {
 
         console.log("Odpalam metode check",data)
         this.setState({
+            number : null,
             filledRow : data,
             trials : this.state.trials + 1,
             shouldRenderHistory: true,
