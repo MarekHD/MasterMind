@@ -21,8 +21,6 @@ class History extends React.Component {
             })
             this.props.resetShouldRender();
         }
-        console.log("componentWillReceiveProps",)
-        
     }
     componentDidUpdate() {
         console.log("Sprawdzam dzialanie componentDidUpdate w History", this.props.filledRow);
@@ -37,6 +35,8 @@ class History extends React.Component {
                         code={this.props.code}
                         pegListColor={this.props.pegListColor}
                         trials={this.props.trials}
+                        historyList={this.state.historyList}
+                        index={this.state.historyList[i]}
                         />
             })
         return  <div className="history">

@@ -9,14 +9,14 @@ class KeyWraperHistory extends React.Component {
     
 
     render() {
-            let tab = [];
-           ///WAZNE
-        //Sprawdzam czy rzad juz zostal zmieniony czy jest to nowa odpowiedz
-        if (this.props.pegListColor.indexOf("color99") == 0){
-            let commingTable = this.props.filledRow;
-            // tab = this.state.pegListColor;
-            if (commingTable){ tab = commingTable }  
-        } else { tab = this.props.pegListColor }
+        //     let tab = [];
+        //    ///WAZNE
+        // //Sprawdzam czy rzad juz zostal zmieniony czy jest to nowa odpowiedz
+        // if (this.props.pegListColor.indexOf("color99") == 0){
+        //     let commingTable = this.props.filledRow;
+        //     // tab = this.state.pegListColor;
+        //     if (commingTable){ tab = commingTable }  
+        // } else { tab = this.props.pegListColor }
 
         const pegs = [0,1,2,3];
         let pegList = [];
@@ -25,7 +25,7 @@ class KeyWraperHistory extends React.Component {
                             data-id={i}  
                             key={i} 
                             className="peg" 
-                            id={tab[i]}>
+                            id={this.props.index[i]}>
                         </div>
             })
         return  <div className="key-wraper">

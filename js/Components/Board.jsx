@@ -52,7 +52,7 @@ class Board extends React.Component {
     componentDidUpdate(){
         console.log("Sprawdzam dzialanie componentDidUpdate",this.state.filledRow)
     }
-    //Nad resetem trzeba jeszcze poprawcować
+    //region Nad resetem trzeba jeszcze poprawcować
     resetRow = () => {
         console.log("reset")
         this.setState({
@@ -61,6 +61,7 @@ class Board extends React.Component {
             pegListColor: ["color99", "color99","color99","color99"],
         })
     }
+    //endregion
     componentDidMount(){//region Losowanie klucza code
         
         let code = [];
