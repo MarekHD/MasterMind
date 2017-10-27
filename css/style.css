@@ -100,6 +100,22 @@ h2 {
     align-self: center;
     margin: 0px 10px;
 }
+.dot-correct {
+    width:14%;
+    height: 25%;
+    border-radius:50%;
+    background-color: green;
+    align-self: center;
+    margin: 0px 10px;
+}
+.dot-semigood {
+    width:14%;
+    height: 25%;
+    border-radius:50%;
+    background-color: greenyellow;
+    align-self: center;
+    margin: 0px 10px;
+}
 .row .check{
     width: 20%;
     height: 50px;
