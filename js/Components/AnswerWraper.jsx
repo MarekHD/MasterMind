@@ -13,7 +13,7 @@ class AnswerWraper extends React.Component {
         //mecze finalDivison
         finalDivision = (element)=>{
             arrayAnswerFilter = guessPigCorrect.filter((element)=>{
-                element === this.
+                element === this.props.code[i] // ?????
             })
 
         }
