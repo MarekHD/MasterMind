@@ -50,7 +50,7 @@ class Board extends React.Component {
     }
     //Sprawdzam dzialanie componentDidUpdate
     componentDidUpdate(){
-        console.log("Sprawdzam dzialanie componentDidUpdate",this.state.filledRow)
+        
     }
     //region Nad resetem trzeba jeszcze poprawcować
     resetRow = () => {

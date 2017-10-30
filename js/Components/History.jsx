@@ -23,7 +23,7 @@ class History extends React.Component {
         }
     }
     componentDidUpdate() {
-        console.log("Sprawdzam dzialanie componentDidUpdate w History", this.props.filledRow);
+        
     }
     render() {
         let historyRows;
