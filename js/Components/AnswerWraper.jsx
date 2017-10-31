@@ -32,8 +32,9 @@ class AnswerWraper extends React.Component {
         
             for (var i = 0; i < 4; i++) {
                 if(codeWorkingCopy.indexOf(guessPig[i])!=-1){
+                    let numberIndex = codeWorkingCopy.indexOf(guessPig[i])
                     semiCounter++;
-                    codeWorkingCopy[i] = 'codeDel';
+                    codeWorkingCopy[numberIndex] = 'codeDel';
                     guessPig[i] = 'pigDel'
                 }
                 
