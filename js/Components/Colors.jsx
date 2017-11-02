@@ -6,7 +6,7 @@ import {ColorsSectionWraper} from './ColorsSectionWraper.jsx';
 class Colors extends React.Component {
     render() {
         return  <div className="colors">
-                    <ColorsTitle resetRow={this.props.resetRow}/>
+                    <ColorsTitle/>
                     <ColorsSectionWraper {...this.props}/>
                 </div>
     }

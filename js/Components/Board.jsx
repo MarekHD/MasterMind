@@ -10,6 +10,7 @@ class Board extends React.Component {
             colors : ['color0','color1','color2','color3','color4','color5'],
             code : [],
             mainColor : 'color99',
+            colorClick : '',
             number : null,
             filledRow : [],
             trials : 0,
@@ -23,6 +24,10 @@ class Board extends React.Component {
     }
     takeClick = (event) => {
         this.mainColor = event.target.id;
+        this.setState({
+            colorClick: this.mainColor,
+        })
+
     }
     giveClick = (event) => {
         this.number = event.target.dataset.id;
@@ -33,8 +38,6 @@ class Board extends React.Component {
         })
     }
     check = (data)=>{
-
-        console.log("Odpalam metode check",data)
         this.setState({
             number : null,
             filledRow : data,
@@ -43,14 +46,12 @@ class Board extends React.Component {
         }) 
     }
     resetShouldRender =()=>{
-        console.log("Odpalam metode resetRenderRRR")
         this.setState({
             shouldRenderHistory: false,
         })
     }
-    //endregion
-    componentDidMount(){//region Losowanie klucza code
-        
+    componentDidMount(){
+        //region Losowanie klucza code
         let code = [];
         for (var i = 0; i < 4; i++) {
             let index = Math.floor(Math.random()*6);
@@ -74,7 +75,7 @@ class Board extends React.Component {
                         filledRow={this.state.filledRow}
                         pegListColor={this.state.pegListColor}
                         btnDisable={this.state.btnDisable}/>
-                    <Side {...this.state} takeClick={this.takeClick} resetRow={this.resetRow}/>
+                    <Side {...this.state} takeClick={this.takeClick}/>
                 </div>
     }
 }
