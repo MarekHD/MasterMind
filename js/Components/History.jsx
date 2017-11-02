@@ -27,7 +27,6 @@ class History extends React.Component {
     }
     render() {
         let historyRows;
-        console.log('JAKI SHOULD REN',this.props.shouldRenderHistory)
             historyRows = this.state.historyList.map( (elem, i) => {
                 return <RowHistory
                         key={i}

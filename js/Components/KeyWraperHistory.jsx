@@ -9,7 +9,6 @@ class KeyWraperHistory extends React.Component {
     
 
     render() {
-        console.log('TUTUTUTU',this.props.index)
         const pegs = [0,1,2,3];
         let pegList = [];
             pegList = pegs.map((elem, i)=>{
