@@ -48,19 +48,6 @@ class Board extends React.Component {
             shouldRenderHistory: false,
         })
     }
-    //Sprawdzam dzialanie componentDidUpdate
-    componentDidUpdate(){
-        
-    }
-    //region Nad resetem trzeba jeszcze poprawcować
-    resetRow = () => {
-        console.log("reset")
-        this.setState({
-            shouldRenderHistory: false,
-            filledRow : [],
-            pegListColor: ["color99", "color99","color99","color99"],
-        })
-    }
     //endregion
     componentDidMount(){//region Losowanie klucza code
         
@@ -70,7 +57,7 @@ class Board extends React.Component {
             code.push(this.state.colors[index]);
         }
         this.setState({code})
-        //endregion
+    //endregion
     }
     render() {
         console.log(this.state.filledRow, 'filledRow sprawdzam')
